@@ -159,6 +159,7 @@ def download_run(args):
 
         if response.status_code != 200:
             raise Exception(response.content)
+        print(response.json())
 
         project_id = response.json()[0]['id']
 

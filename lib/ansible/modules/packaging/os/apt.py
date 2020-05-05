@@ -1058,7 +1058,7 @@ def main():
                 module.run_command(['apt-get', 'update'], check_rc=True)
 
             options = [expand_dpkg_options(module.params.get('dpkg_options')), '--no-install-recommends', '--yes', '--quiet']
-            module.run_command(['apt-get', 'install', *options, PYTHON_APT], check_rc=True)
+            module.run_command(['apt-get', 'install', PYTHON_APT] + options, check_rc=True)
 
             global apt, apt_pkg
             import apt
